@@ -12,6 +12,10 @@ import org.apache.spark.sql.functions;
 
 import java.util.Arrays;
 
+/**
+ * @author Jeff Risberg
+ * @since 05/31/17
+ */
 public class LinearRegressionExampleApp {
     public static void main(String[] args) {
 
@@ -23,7 +27,7 @@ public class LinearRegressionExampleApp {
 
         // Load the data.
         Dataset<Row> dataFrame = spark.read().format("libsvm")
-                .load("data/mllib/sample_linear_regression_data.txt");
+                .load("data/mllib/sample_regression_data.txt");
         // columns are "label", "features"
 
         // Split the data into train and test

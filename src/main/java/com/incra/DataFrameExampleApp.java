@@ -31,7 +31,7 @@ public class DataFrameExampleApp {
         dfs.filter(dfs.col("age").gt(23)).show();
 
         // This seems to take quite a while, perhaps because GroupBy and Count are
-        // creating a new RDD, and count requires a collection oer hte clusters.
+        // creating a new RDD, and count requires a collection over the clusters.
         dfs.groupBy("age").count().show();
 
         // Create an RDD of Person objects from a text file

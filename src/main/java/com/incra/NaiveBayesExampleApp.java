@@ -7,6 +7,10 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+/**
+ * @author Jeff Risberg
+ * @since 05/31/17
+ */
 public class NaiveBayesExampleApp {
     public static void main(String[] args) {
 
@@ -18,7 +22,7 @@ public class NaiveBayesExampleApp {
 
         // Load training data
         Dataset<Row> dataFrame =
-                spark.read().format("libsvm").load("data/mllib/sample_libsvm_data.txt");
+                spark.read().format("libsvm").load("data/mllib/sample_classifier_data.txt");
 
         // Split the data into train and test
         Dataset<Row>[] splits = dataFrame.randomSplit(new double[]{0.6, 0.4}, 1234L);
