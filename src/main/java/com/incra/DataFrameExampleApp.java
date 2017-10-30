@@ -18,7 +18,7 @@ public class DataFrameExampleApp {
                 .master("local[4]")
                 .getOrCreate();
 
-        // Create an RDD of Person objects and register it as a table.
+        // Create a dataframe
         Dataset<Row> df = spark.read().option("header", "true").csv("./data/peopleWithHeader.txt");
         df.show();
 
